@@ -1,4 +1,3 @@
-from contact.models import Contact
 import os
 import django
 
@@ -7,7 +6,9 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
 django.setup()
 
 
-c = Contact.objects.all()
+if __name__ == '__main__':
+    from contact.models import Contact
+    c = Contact.objects.all()
 
-for contato in c:
-    print(contato)
+    for contato in c:
+        print(contato)
